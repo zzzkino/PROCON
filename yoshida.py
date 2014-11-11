@@ -58,4 +58,4 @@ def coin2(c1,c5,c10,c50,c100,c500,A):
 
 print coin2(3,2,1,3,0,2,620)
 
-print 'a'
+print 'dev'
