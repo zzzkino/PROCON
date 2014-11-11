@@ -41,7 +41,7 @@ def C1(c1,F):
         return c1
 
 
-def coin(c1,c5,c10,c50,c100,c500,A):
+def coin2(c1,c5,c10,c50,c100,c500,A):
     a = C500(c500,A)
     B = A-500*a
     b = C100(c100,B)
@@ -56,5 +56,5 @@ def coin(c1,c5,c10,c50,c100,c500,A):
     return a+b+c+d+e+f
 
 
-print coin(3,2,1,3,0,2,620)
+print coin2(3,2,1,3,0,2,620)
 
