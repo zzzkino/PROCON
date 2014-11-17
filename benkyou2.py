@@ -13,7 +13,7 @@ def work(n,s,t):
             for i in A:
                 B.append(t[i])
                 a = min(B)
-    print Count2
+    print(Count2)
 
 n=7
 s=[1,5,3,2,6,8,7]
