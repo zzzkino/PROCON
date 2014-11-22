@@ -12,7 +12,7 @@ def work(n,s,t):
             Count2 += 1
             for i in A:
                 B.append(t[i])
-                a = min(B)
+            a = min(B)
     print(Count2)
 
 n=7
