@@ -8,7 +8,7 @@ dic={'A':1, 'B':2, 'C':3, 'D':4, 'E':5,
 def charT(N,S):
     i = 0
     T = ''
-    while i < N-1:
+    while i < N:
         if dic[S[0]] > dic[S[-1]]:
             T = T + S[-1]
             print(T)
@@ -22,20 +22,23 @@ def charT(N,S):
         else:
             i += 1
             SS = S
-            while dic[SS[0]] == dic[SS[-1]]:
-                SS = SS[1:-1]
-                if len(SS) <= 2:
-                    break
-            if dic[SS[0]] > dic[SS[-1]]:
-                T = T + S[-1]
-                S = S[:-1]
-                print(T)
+            if len(SS) > 2:
+                while dic[SS[0]] == dic[SS[-1]]:
+                    SS = SS[1:-1]
+                    if len(SS) <= 2:
+                        break
+                if dic[SS[0]] > dic[SS[-1]]:
+                    T = T + S[-1]
+                    S = S[:-1]
+                    print(T)
+                else:
+                    T = T + S[0]
+                    S = S[1:]
+                    print(T)
             else:
                 T = T + S[0]
-                S = S[1:]
                 print(T)
 
-
 N = 7
-S = 'HKHAHLH'
+S = 'ABFFFCA'
 charT(N,S)
