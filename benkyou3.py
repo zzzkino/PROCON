@@ -36,5 +36,5 @@ def charT(N,S):
     print(T)
 
 N = 8
-S = 'ABFCAFCA'
+S = 'ADGACBCA'
 charT(N,S)
