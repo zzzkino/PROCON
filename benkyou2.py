@@ -12,9 +12,9 @@ def work(n,s,t):
             Count2 += 1
             for i in A:
                 B.append(t[i])
-                a = min(B)
+            a = min(B)
     print(Count2)
-
+#breakをつける
 n=7
 s=[1,5,3,2,6,8,7]
 t=[2,6,4,4,7,9,10]
