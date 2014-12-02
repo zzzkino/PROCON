@@ -15,10 +15,7 @@ def pointcounter(N,R,X):
                     break
     print(counter)
 
-
-
-
 N = 6
-R = 10
-X = [0,0,1,3,15,29]
+R = 1
+X = [0,0,1,3,15,16]
 pointcounter(N,R,X)
