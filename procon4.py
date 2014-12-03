@@ -9,13 +9,11 @@ def pointcounter(N,R,X):
             for right in range(left +1,N):
                 if X[right]-X[left] > R:
                     point = X[right -1] +R
-                    print('point;')
-                    print(point)
                     counter += 1
                     break
     print(counter)
 
 N = 6
 R = 1
-X = [0,0,1,3,15,16]
+X = [0,1,2,3,15,16]
 pointcounter(N,R,X)
