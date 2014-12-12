@@ -6,8 +6,7 @@ def counter(N,L):
         Y = L.pop(0)
         counter += X+Y
         L.append(X+Y)
-        print(L)
-        print(counter)
+    print(counter)
 
 N = 3
 L = [8,5,8]
