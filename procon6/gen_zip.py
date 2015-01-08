@@ -31,6 +31,7 @@ for char in text:
     text_zip=text_zip+CharCodeDict[char]
 print(text_zip)
 
+
 newtext=''
 while len(text_zip) !=0:
     A='0'
