@@ -24,8 +24,8 @@ CodeCharDict={}
 for i in range(0,n):
     CharCodeDict[SortedCharList[i]]=list_01[i]
     CodeCharDict[list_01[i]]=SortedCharList[i]
-print(CharCodeDict)
-print(CodeCharDict)
+# print(CharCodeDict)
+# print(CodeCharDict)
 text_zip=''
 for char in text:
     text_zip=text_zip+CharCodeDict[char]
@@ -35,10 +35,8 @@ newtext=''
 while len(text_zip) !=0:
     A='0'
     while text_zip[0]=='1':
-        text_zip.pop(0)
+        text_zip=text_zip[1:]
         A='1'+A
     newtext= newtext + CodeCharDict[A]
+    text_zip=text_zip[1:]
 print(newtext)
-
-
-
