@@ -44,3 +44,8 @@ def make_tree(List):
     print(List)
     print(CharCodeDict)
 make_tree(ListOfCharLists)
+
+text_zip=''
+for char in text:
+    text_zip=text_zip+CharCodeDict[char]
+print(text_zip)
