@@ -1,0 +1,46 @@
+File = open('ziptest')
+text = File.read()
+File.close()
+print(text)
+CharCountDict = {}
+for char in text:
+    if char in CharCountDict:
+        CharCountDict[char] = CharCountDict[char] + 1
+    else:
+        CharCountDict[char] = 1
+CharCountTuple = CharCountDict.items()
+SortedCharCountTuple=sorted(CharCountTuple, key=lambda x:x[1],reverse=True)
+
+ListOfCharLists = []
+for tuple in CharCountTuple:
+    ListOfCharLists.append([tuple[1],tuple[0]])
+
+ListOfCharLists=sorted(ListOfCharLists, key=lambda x:x[0])
+print(ListOfCharLists)
+
+CharCodeDict={}
+def make_tree(List):
+    n = len(List)
+    for i in range(n-1):
+        sorted(List, key=lambda x:x[0])
+        X = List.pop(0)
+        Y = List.pop(0)
+        x=len(X)
+        y=len(Y)
+        newlist=[X[0]+Y[0]]
+        for k in range(x-1):
+            newlist.append(X[k+1])
+            if X[k+1] in CharCodeDict:
+                CharCodeDict[X[k+1]]=CharCodeDict[X[k+1]]+'0'
+            else:
+                CharCodeDict[X[k+1]]='0'
+        for l in range(y-1):
+            newlist.append(Y[l+1])
+            if Y[l+1] in CharCodeDict:
+                CharCodeDict[Y[l+1]]=CharCodeDict[Y[l+1]]+'1'
+            else:
+                CharCodeDict[Y[l+1]]='1'
+        List.append(newlist)
+    print(List)
+    print(CharCodeDict)
+make_tree(ListOfCharLists)
