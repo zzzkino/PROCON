@@ -12,14 +12,16 @@ CharCountTuple = CharCountDict.items()
 SortedCharCountTuple=sorted(CharCountTuple, key=lambda x:x[1],reverse=True)
 
 ListOfCharLists = []
+Charlist=[]
 for tuple in CharCountTuple:
     ListOfCharLists.append([tuple[1],tuple[0]])
+    Charlist.append(tuple[0])
 
 ListOfCharLists=sorted(ListOfCharLists, key=lambda x:x[0])
 print(ListOfCharLists)
 
 CharCodeDict={}
-def make_tree(List):
+def make_CharCodeDict(List):
     n = len(List)
     for i in range(n-1):
         sorted(List, key=lambda x:x[0])
@@ -41,11 +43,24 @@ def make_tree(List):
             else:
                 CharCodeDict[Y[l+1]]='1'
         List.append(newlist)
-    print(List)
     print(CharCodeDict)
-make_tree(ListOfCharLists)
+make_CharCodeDict(ListOfCharLists)
+
+CodeCharDict={}
+def make_CodeCharDict(List):
+    for char in List:
+        CodeCharDict[CharCodeDict[char]]=char
+make_CodeCharDict(Charlist)
+print(CodeCharDict)
 
 text_zip=''
 for char in text:
     text_zip=text_zip+CharCodeDict[char]
 print(text_zip)
+
+
+# newtext=''
+# disc=''
+# for char in text_zip:
+#     disc=disc+char
+#     if
