@@ -58,7 +58,6 @@ for char in text:
     text_zip=text_zip+CharCodeDict[char]
 print(text_zip)
 
-
 # newtext=''
 # disc=''
 # for char in text_zip:
