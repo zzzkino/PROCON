@@ -33,13 +33,13 @@ def make_CharCodeDict(List):
         for k in range(x-1):
             newlist.append(X[k+1])
             if X[k+1] in CharCodeDict:
-                CharCodeDict[X[k+1]]=CharCodeDict[X[k+1]]+'0'
+                CharCodeDict[X[k+1]]='0'+CharCodeDict[X[k+1]]
             else:
                 CharCodeDict[X[k+1]]='0'
         for l in range(y-1):
             newlist.append(Y[l+1])
             if Y[l+1] in CharCodeDict:
-                CharCodeDict[Y[l+1]]=CharCodeDict[Y[l+1]]+'1'
+                CharCodeDict[Y[l+1]]='1'+CharCodeDict[Y[l+1]]
             else:
                 CharCodeDict[Y[l+1]]='1'
         List.append(newlist)
@@ -53,13 +53,18 @@ def make_CodeCharDict(List):
 make_CodeCharDict(Charlist)
 print(CodeCharDict)
 
-text_zip=''
+text_zip = ''
 for char in text:
-    text_zip=text_zip+CharCodeDict[char]
+    text_zip = text_zip + CharCodeDict[char]
 print(text_zip)
 
-# newtext=''
-# disc=''
-# for char in text_zip:
-#     disc=disc+char
-#     if
+newtext = ''
+disc = ''
+for code in text_zip:
+    disc = disc + code
+    char = CodeCharDict.get(disc, 'null')
+    if char != 'null':
+        newtext = newtext + char
+        disc=''
+
+print(newtext)
