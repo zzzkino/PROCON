@@ -9,16 +9,12 @@ for char in text:
     else:
         CharCountDict[char] = 1
 CharCountTuple = CharCountDict.items()
-SortedCharCountTuple=sorted(CharCountTuple, key=lambda x:x[1],reverse=True)
 
 ListOfCharLists = []
 Charlist=[]
 for tuple in CharCountTuple:
     ListOfCharLists.append([tuple[1],tuple[0]])
     Charlist.append(tuple[0])
-
-ListOfCharLists=sorted(ListOfCharLists, key=lambda x:x[0])
-print(ListOfCharLists)
 
 CharCodeDict={}
 def make_CharCodeDict(List):
@@ -43,7 +39,6 @@ def make_CharCodeDict(List):
             else:
                 CharCodeDict[Y[l+1]]='1'
         List.append(newlist)
-    print(CharCodeDict)
 make_CharCodeDict(ListOfCharLists)
 
 CodeCharDict={}
@@ -51,7 +46,6 @@ def make_CodeCharDict(List):
     for char in List:
         CodeCharDict[CharCodeDict[char]]=char
 make_CodeCharDict(Charlist)
-print(CodeCharDict)
 
 text_zip = ''
 for char in text:
@@ -66,5 +60,4 @@ for code in text_zip:
     if char != 'null':
         newtext = newtext + char
         disc=''
-
 print(newtext)
