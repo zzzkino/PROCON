@@ -1,6 +1,6 @@
 def get_max_value(list,W):
-    note=[(0,0)] #memoの２つのtupleをもとからあるnoteの要素に足したもの
-    note2=[] #noteのweightでだぶったものを消したnote
+    note=[(0,0)]
+    note2=[]
     note3=[]
     memo=[]
     for tuple in list:
@@ -37,7 +37,6 @@ def get_max_value(list,W):
     sorted(note, key=lambda x:x[1],reverse=True)#価値が大きい順
     print(note)
     print(note[0][1])
-
 
 #(w,v)
 list=[(5,4),(2,3),(2,4),(4,2),(2,1)]
