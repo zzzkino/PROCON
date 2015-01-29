@@ -2,9 +2,7 @@ def get_max_value(list,W):
     note=[(0,0)] #memoの２つのtupleをもとからあるnoteの要素に足したもの
     note2=[] #noteのweightでだぶったものを消したnote
     note3=[]
-    note4=[]
     memo=[]
-    memo2=[]
     for tuple in list:
         weight=tuple[0]
         value=tuple[1]
