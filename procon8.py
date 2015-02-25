@@ -22,51 +22,45 @@ def make_listoflist(char1, char2):
     return large_list
 
 
-def find_maxnum_and_cahnge_listoflist(listoflist):
-    max_list = []
+def change_listoflist(listoflist):
     newlistoflist = []
     for i in range(len(listoflist)):
         if listoflist[i] != []:
-            max_list.append(max(listoflist[i]))
             newlistoflist.append(listoflist[i])
     listoflist = newlistoflist
-    return [max(max_list), listoflist]
+    return listoflist
 
 
 def solve(listoflist):
-    max_num = find_maxnum_and_cahnge_listoflist(listoflist)[0]
-    listoflist = find_maxnum_and_cahnge_listoflist(listoflist)[1]
+    listoflist = change_listoflist(listoflist)
     box = [(-1, 0)]
+    print(listoflist)
     for list in listoflist:
-        newbox = box
+        new_box = []
         for tuple in box:
-            print(tuple)
             for el in list:
                 if tuple[0] < el:
-                    newbox.append((el, tuple[1]+1))
-                    # print(newbox)
+                    new_box.append((el, tuple[1]+1))
                     break
-        newbox=sorted(newbox, key=lambda x:x[0])
-        cal_list=[]
-        print('bb')
-        for i in range(len(newbox)-1):
-            for k in range(i+1, len(newbox)-1):
-                if newbox[i][0] == newbox[k][0]:
-                    if newbox[i][1] <= newbox[k][1]:
+        box.extend(new_box)
+        box = sorted(box, key=lambda x:x[0])
+        cal_list = []
+        for i in range(len(box)-1):
+            for k in range(i+1, len(box)):
+                if box[i][0] == box[k][0]:
+                    if box[i][1] <= box[k][1]:
                         cal_list.append(i)
                         break
         cal_list.sort()
         cal_list.reverse()
-        # print(cal_list)
         for i in cal_list:
-            del newbox[i]
-        # print(newbox)
-        box = newbox
+            del box[i]
+        print(box)
+
     box=sorted(box, key=lambda x:x[1], reverse=True)
     print('答えは'+str(box[0][1]))
                     
 
-s = 'aiyd'
+s = 'aifydgfii'
 t = 'aiudadf'
-print(make_listoflist(s, t))
 solve(make_listoflist(s, t))
