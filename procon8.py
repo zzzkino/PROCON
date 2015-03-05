@@ -61,6 +61,6 @@ def solve(listoflist):
     print('答えは'+str(box[0][1]))
                     
 
-s = 'aifydgfii'
-t = 'aiudadf'
+s = 'aifi'
+t = 'aidafdf'
 solve(make_listoflist(s, t))
