@@ -1,5 +1,5 @@
 def solve(listoflist, target_weight):
-    new_list = [x for x in listoflist if x[0] <= target_weight]
+    new_list = sorted([x for x in listoflist if x[0] <= target_weight], key=lambda x:x[0], reverse=True)
     print(new_list)
     weights = {0: 0}
     for mylist in new_list:
@@ -22,5 +22,5 @@ def solve(listoflist, target_weight):
 
 test = [[2, 3], [5, 6], [4, 5], [3, 2]]  #(w,v)
 
-solve(test, 8)
+solve([[i,i] for i in range(1,100)], 10000)
 
