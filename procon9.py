@@ -1,10 +1,6 @@
-<<<<<<< HEAD:procon9.py
-def solve(listoflist, target_weight):
-    new_list = sorted([x for x in listoflist if x[0] <= target_weight], key=lambda x:x[0], reverse=True)
-=======
+
 def solve(list_of_target_list, target_weight):
     new_list = [x for x in list_of_target_list if x[0] <= target_weight]
->>>>>>> 4dceba49e31facf9bfddeab1ca371a0d6ab43c4a:procon9
     print(new_list)
     weights = {}
     for i in range(target_weight+1):
