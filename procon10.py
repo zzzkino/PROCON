@@ -2,7 +2,7 @@
 def solve(list_of_target_list, target_weight):
     new_list = [x for x in list_of_target_list if x[0] <= target_weight]
     print(new_list)
-    values = {1:1}
+    values = {0:0}
     for mylist in new_list:
         myweight = mylist[0]
         myvalue = mylist[1]
@@ -22,6 +22,6 @@ test = [[2, 3], [5, 6], [4, 5], [3, 2]]  #(w,v)
 
 # solve([[i,i] for i in range(1,100)], 10000)
 
-solve(test,14)
+solve(test,13)
 
 
