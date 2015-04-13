@@ -9,13 +9,13 @@ def solve(list_of_target_list, target_weight):
         new_values = values.copy()
         for value, weight in values.items():
             if weight + myweight <= target_weight:
-                a=values.get(value + myvalue, -1)
+                a = values.get(value + myvalue, -1)
                 if a == -1 or a > myweight + weight:
                     new_values[value + myvalue] = myweight + weight
         values = new_values
         print(values)
-    anser = max(values.keys())
-    print('Anser is '+str(anser))
+    answer = max(values.keys())
+    print('Answer is '+str(answer))
 
 
 test = [[2, 3], [5, 6], [4, 5], [3, 2]]  #(w,v)
