@@ -1,8 +1,7 @@
 
 def solve(list_of_target_list, target_weight):
     new_list = [x for x in list_of_target_list if x[0] <= target_weight]
-    print(new_list)
-    values = {0:0}
+    values = {0: 0}
     for mylist in new_list:
         myweight = mylist[0]
         myvalue = mylist[1]
