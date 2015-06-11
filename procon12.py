@@ -5,7 +5,7 @@ def solve(target_list):
         new_dic = dic.copy()
         for key_counter, value_num in dic.items():
             if value_num < num:
-                if (key_counter + 1 not in dic):
+                if key_counter + 1 not in dic:
                     new_dic[key_counter + 1] = num
                 elif dic[key_counter + 1] > num:
                     new_dic[key_counter + 1] = num
