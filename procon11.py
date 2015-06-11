@@ -22,4 +22,4 @@ def solve(k, target_list):
         values_dic = new_values_dic
     print(criteria)
 
-solve(17, [[3, 5], [5, 4], [13, 2]])
+solve(34, [[3, 5], [5, 4], [13, 2]])
