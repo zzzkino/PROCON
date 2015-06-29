@@ -16,7 +16,7 @@ def solve(list_of_target_list, target_weight):
         weights = new_weights
         print(weights)
     anser = max(weights.values())
-    print('Anser is '+str(anser))
+    print('Answer is '+str(anser))
 
 
 test = [[2, 3], [5, 6], [4, 5], [3, 2]]  #(w,v)
