@@ -11,13 +11,13 @@ def solve(n, m, M):
                 counted_num_list = [1]
             else:
                 target_row = matrix[rem-1]
-                l = 0
+                lower_num = 0
                 if rem <= column_num:
-                    l = rem
+                    lower_num = rem
                 else:
-                    l = column_num
+                    lower_num = column_num
 
-                for h in range(l):
+                for h in range(lower_num):
                     el_list = target_row[h][1]
                     if len(el_list) >= 1:
                         for num in el_list:
@@ -26,7 +26,6 @@ def solve(n, m, M):
             tuple = (rem, counted_num_list)
             row.append(tuple)
         matrix.append(row)
-        print(row)
     target = matrix[n-1]
     counter = 0
     for el in target:
@@ -36,4 +35,4 @@ def solve(n, m, M):
 
 
 
-solve(6, 6, 4)
+solve(100, 100, 1)
