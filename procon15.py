@@ -1,34 +1,27 @@
 # coding:utf-8
 
 def solve(n, m, a_list, M):
-    matrix = [[1]]
+    preRow = [0 for _ in range(m+1)]
+    preRow[0] = 1
+    row = preRow[:]
     for i in range(n):
         a = a_list[i]
-        PreRow = matrix[i]
-        LenPreRow = len(PreRow)
-        Row = [1]
-        LenRow = len(PreRow) + a
-        if LenRow > m+1:
-            LenRow = m+1
-        for k in range(1, LenRow):
-            b = 0
+        row[0] = 1
+        for k in range(1, m+1):
             c = 0
-            if LenPreRow >= k+1:
-                b = PreRow[k]
             if k-a-1 >= 0:
-                c = PreRow[k-a-1]
-            el = b + Row[-1] - c
-            Row.append(el)
-        print(Row)
-        matrix.append(Row)
-    answer = matrix[-1][-1]%M
+                c = preRow[k-a-1]
+            row[k] = (preRow[k] + row[k-1] - c + M)%M
+        #print(row)
+        preRow, row = row, preRow;
+    answer = preRow[m]
     print(answer)
 
 
 solve(4, 5, [2, 1, 3, 2], 100)  # n=3 m=3 a=[1,3,2] M=100
 
 
-solve(1000, 1000, [1000 for i in range(1000)], 1000)
+solve(1000, 1000, [1000 for i in range(1000)], 10000)
 
 
 
